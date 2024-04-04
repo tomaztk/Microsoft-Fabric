@@ -7,17 +7,17 @@ Microsoft Fabric is a next-gen platform, that brings all-in-one data and analyti
 
 ## Table of content / Featured blogposts
 
-1. [Dec 01 2023 - What is Microsoft Fabric?](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/01/advent-of-2023-day-1-what-is-microsoft-fabric/))
-2. [Dec 02 2023 - Getting started with Microsoft Fabric](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/02/advent-of-2023-day-2-getting-started-with-microsoft-fabric/))
-3. [Dec 03 2023 - What is lakehouse in Fabric?](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/03/advent-of-2023-day-3-what-is-lakehouse-in-fabric/))
-4. [Dec 04 2023 - Delta lake and delta tables in Microsoft Fabric](https://github.com/tomaztk/ ... .md) ([blogspot](https://tomaztsql.wordpress.com/2023/12/04/advent-of-2023-day-4-delta-lake-and-delta-tables-in-microsoft-fabric/))
-5. [Dec 05 2023 - Getting data into lakehouse](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/05/advent-of-2023-day-5-getting-data-into-lakehouse/))
-6. [Dec 06 2023 -  SQL Analytics endpoint](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/06/advent-of-2023-day-6-sql-analytics-endpoint/))
-7. [Dec 07 2023 - SQL commands in SQL Analytics endpoint](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/07/advent-of-2023-day-7-sql-commands-in-sql-analytics-endpoint/))
-8. [Dec 08 2023 - Using Lakehouse REST API](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/08/advent-of-2023-day-8-using-lakehouse-rest-api/))
-9. [Dec 09 2023 - Building custom environments](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/09/advent-of-2023-day-9-building-custom-environments-and-spark-job-definitions/))
-10. [Dec 10 2023 - Creating Job Spark definition](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/10/advent-of-2023-day-10-creating-job-spark-definition/))
-11. [Dec 11 2023 - Starting data science with Microsoft Fabric](https://github.com/tomaztk/ ... .md)) ([blogpost](https://tomaztsql.wordpress.com/2023/12/11/advent-of-2023-day-11-starting-data-science-with-microsoft-fabric/))
+1. [Dec 01 2023 - What is Microsoft Fabric?](https://github.com/tomaztk/01.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/01/advent-of-2023-day-1-what-is-microsoft-fabric/))
+2. [Dec 02 2023 - Getting started with Microsoft Fabric](https://github.com/tomaztk/02.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/02/advent-of-2023-day-2-getting-started-with-microsoft-fabric/))
+3. [Dec 03 2023 - What is lakehouse in Fabric?](https://github.com/tomaztk/03.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/03/advent-of-2023-day-3-what-is-lakehouse-in-fabric/))
+4. [Dec 04 2023 - Delta lake and delta tables in Microsoft Fabric](https://github.com/tomaztk/04.md) ([blogspot](https://tomaztsql.wordpress.com/2023/12/04/advent-of-2023-day-4-delta-lake-and-delta-tables-in-microsoft-fabric/))
+5. [Dec 05 2023 - Getting data into lakehouse](https://github.com/tomaztk/05.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/05/advent-of-2023-day-5-getting-data-into-lakehouse/))
+6. [Dec 06 2023 -  SQL Analytics endpoint](https://github.com/tomaztk/06.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/06/advent-of-2023-day-6-sql-analytics-endpoint/))
+7. [Dec 07 2023 - SQL commands in SQL Analytics endpoint](https://github.com/tomaztk/07.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/07/advent-of-2023-day-7-sql-commands-in-sql-analytics-endpoint/))
+8. [Dec 08 2023 - Using Lakehouse REST API](https://github.com/tomaztk/08.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/08/advent-of-2023-day-8-using-lakehouse-rest-api/))
+9. [Dec 09 2023 - Building custom environments](https://github.com/tomaztk/09.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/09/advent-of-2023-day-9-building-custom-environments-and-spark-job-definitions/))
+10. [Dec 10 2023 - Creating Job Spark definition](https://github.com/tomaztk/10.md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/10/advent-of-2023-day-10-creating-job-spark-definition/))
+11. [Dec 11 2023 - Starting data science with Microsoft Fabric](https://github.com/tomaztk/11.md)) ([blogpost](https://tomaztsql.wordpress.com/2023/12/11/advent-of-2023-day-11-starting-data-science-with-microsoft-fabric/))
 
 
 12. [Dec 12 2023 - Using Azure Databricks Notebooks with Python to do Data engineerg and data analytics](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2012%202020%20-%20Using%20Azure%20Databricks%20Notebooks%20with%20Python%20Language%20for%20data%20analytics.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/12/advent-of-2020-day-12-using-azure-databricks-notebooks-with-python-language-for-data-analytics/))
