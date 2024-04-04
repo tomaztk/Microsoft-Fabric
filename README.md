@@ -1,185 +1,78 @@
 # Microsoft Fabric
 
-## Data Engineering
+Microsoft Fabric is a next-gen platform, that brings all-in-one data and analytics solutions for end users, small, medium and large enterprises. Services offer the complete data cycle movement (data ingestion, data engineering, data integration, data storing with warehouse using one lake), delivering data insights and building predictive models. 
 
-### Create delta tables
+![Fabric Logo](./imgs/01_fabric_logo.png) 
 
-Preparation
 
-```
-spark.conf.set("spark.sql.parquet.vorder.enabled", "true")
-spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
-spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
+## Table of content / Featured blogposts
 
-from pyspark.sql.functions import col, year, month, quarter
+1. [Dec 01 2023 - What is Microsoft Fabric?](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/01/advent-of-2023-day-1-what-is-microsoft-fabric/))
+2. [Dec 02 2023 - Getting started with Microsoft Fabric](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/02/advent-of-2023-day-2-getting-started-with-microsoft-fabric/))
+3. [Dec 03 2023 - What is lakehouse in Fabric?](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/03/advent-of-2023-day-3-what-is-lakehouse-in-fabric/))
+4. [Dec 04 2023 - Delta lake and delta tables in Microsoft Fabric](https://github.com/tomaztk/ ... .md) ([blogspot](https://tomaztsql.wordpress.com/2023/12/04/advent-of-2023-day-4-delta-lake-and-delta-tables-in-microsoft-fabric/))
+5. [Dec 05 2023 - Getting data into lakehouse](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/05/advent-of-2023-day-5-getting-data-into-lakehouse/))
+6. [Dec 06 2023 -  SQL Analytics endpoint](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/06/advent-of-2023-day-6-sql-analytics-endpoint/))
+7. [Dec 07 2023 - SQL commands in SQL Analytics endpoint](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/07/advent-of-2023-day-7-sql-commands-in-sql-analytics-endpoint/))
+8. [Dec 08 2023 - Using Lakehouse REST API](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/08/advent-of-2023-day-8-using-lakehouse-rest-api/))
+9. [Dec 09 2023 - Building custom environments](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/09/advent-of-2023-day-9-building-custom-environments-and-spark-job-definitions/))
+10. [Dec 10 2023 - Creating Job Spark definition](https://github.com/tomaztk/ ... .md) ([blogpost](https://tomaztsql.wordpress.com/2023/12/10/advent-of-2023-day-10-creating-job-spark-definition/))
+11. [Dec 11 2023 - Starting data science with Microsoft Fabric](https://github.com/tomaztk/ ... .md)) ([blogpost](https://tomaztsql.wordpress.com/2023/12/11/advent-of-2023-day-11-starting-data-science-with-microsoft-fabric/))
 
-table_name = 'fact_sale'
 
-df = spark.read.format("parquet").load('Files/wwi-raw-data/full/fact_sale_1y_full')
-df = df.withColumn('Year', year(col("InvoiceDateKey")))
-df = df.withColumn('Quarter', quarter(col("InvoiceDateKey")))
-df = df.withColumn('Month', month(col("InvoiceDateKey")))
+12. [Dec 12 2023 - Using Azure Databricks Notebooks with Python to do Data engineerg and data analytics](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2012%202020%20-%20Using%20Azure%20Databricks%20Notebooks%20with%20Python%20Language%20for%20data%20analytics.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/12/advent-of-2020-day-12-using-azure-databricks-notebooks-with-python-language-for-data-analytics/))
+13. [Dec 13 2023 - Using Python Databricks Koalas with Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2013%202020%20-%20Using%20Python%20Databricks%20Koalas%20with%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/13/advent-of-2020-day-13-using-python-databricks-koalas-with-azure-databricks/))
+14. [Dec 14 2023 - From configuration to execution of Databricks jobs](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2014%202020%20-%20%20From%20configuration%20to%20execution%20of%20Databricks%20jobs.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/14/advent-of-2020-day-14-from-configuration-to-execution-of-databricks-jobs/))
+15. [Dec 15 2023 - Databricks Spark UI, Event Logs, Driver logs and Metrics](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2015%202020%20-%20Databricks%20Spark%20UI%2C%20Event%20Logs%2C%20Driver%20logs%20and%20Metrics.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/15/advent-of-2020-day-15-databricks-spark-ui-event-logs-driver-logs-and-metrics/))
+16. [Dec 16 2023 - Databricks experiments, models and MLFlow](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2016%202020%20-%20Databricks%20experiments%2C%20models%20and%20MLFlow.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/16/advent-of-2020-day-16-databricks-experiments-models-and-mlflow/))
+17. [Dec 17 2023 - End-to-End Machine learning project in Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2017%202020%20-%20End-to-End%20Machine%20learning%20project%20in%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/17/advent-of-2020-day-17-end-to-end-machine-learning-project-in-azure-databricks/))
+18. [Dec 18 2023 - Using Azure Data Factory with Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2018%202020%20-%20Using%20Azure%20Data%20Factory%20with%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/18/advent-of-2020-day-18-using-azure-data-factory-with-azure-databricks/))
+19. [Dec 19 2023 - Using Azure Data Factory with Azure Databricks for merging CSV files](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2019%202020%20-%20Using%20Azure%20Data%20Factory%20with%20Azure%20Databricks%20for%20merging%20CSV%20files.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/19/advent-of-2020-day-19-using-azure-data-factory-with-azure-databricks-for-merging-csv-files/))
+20. [Dec 20 2023 - Orchestrating multiple notebooks with Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2020%202020%20-%20Orchestrating%20multiple%20notebooks%20with%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/16/advent-of-2020-day-16-databricks-experiments-models-and-mlflow/
+))
+21. [Dec 21 2023 - Using Scala with Spark Core API in Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2021%202020%20-%20Using%20Scala%20with%20Spark%20Core%20API%20in%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/21/advent-of-2020-day-21-using-scala-with-spark-core-api-in-azure-databricks/))
+22. [Dec 22 2023 - Using Spark SQL and DataFrames in Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2022%202020%20-%20Using%20Spark%20SQL%20and%20DataFrames%20in%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/22/advent-of-2020-day-22-using-spark-sql-and-dataframes-in-azure-databricks/))
+23. [Dec 23 2023 - Using Spark Streaming in Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2023%202020%20-%20Using%20Spark%20Streaming%20in%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/23/advent-of-2020-day-23-using-spark-streaming-in-azure-databricks/))
+24. [Dec 24 2023 - Using Spark MLlib for Machine Learning in Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2024%202020%20-%20Using%20Spark%20MLlib%20for%20Machine%20Learning%20in%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/24/advent-of-2020-day-24-using-spark-mllib-for-machine-learning-in-azure-databricks/))
+25. [Dec 25 2023 - Using Spark GraphFrames in Azure Databricks](https://github.com/tomaztk/Azure-Databricks/blob/main/Dec%2025%202020%20-%20Using%20Spark%20GraphFrames%20in%20Azure%20Databricks.md) ([blogpost](https://tomaztsql.wordpress.com/2020/12/25/advent-of-2020-day-25-using-spark-graphframes-in-azure-databricks/))
 
-df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").save("Tables/" + table_name)
 
-from pyspark.sql.types import *
+## Additional Material
 
-def loadFullDataFromSource(table_name):
-    df = spark.read.format("parquet").load('Files/wwi-raw-data/full/' + table_name)
-    df.write.mode("overwrite").format("delta").save("Tables/" + table_name)
+Additional Material as a collection of demo materials from different sessions is also available for use in this repository.
 
-full_tables = [
-    'dimension_city',
-    'dimension_date',
-    'dimension_employee',
-    'dimension_stock_item'
-    ]
+## Blog
 
-for table in full_tables:
-    loadFullDataFromSource(table)
-    
-```
+All posts were originally posted on my [blog](https://tomaztsql.wordpress.com) and made copy here at Github. On Github is extremely simple to clone the code, markdown file and all the materials.
 
-Data Transformation
 
-```
-df_fact_sale = spark.read.table("wwilakehouse.fact_sale") 
-df_dimension_date = spark.read.table("wwilakehouse.dimension_date")
-df_dimension_city = spark.read.table("wwilakehouse.dimension_city")
 
-sale_by_date_city = df_fact_sale.alias("sale") \
-.join(df_dimension_date.alias("date"), df_fact_sale.InvoiceDateKey == df_dimension_date.Date, "inner") \
-.join(df_dimension_city.alias("city"), df_fact_sale.CityKey == df_dimension_city.CityKey, "inner") \
-.select("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory", "sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")\
-.groupBy("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory")\
-.sum("sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")\
-.withColumnRenamed("sum(TotalExcludingTax)", "SumOfTotalExcludingTax")\
-.withColumnRenamed("sum(TaxAmount)", "SumOfTaxAmount")\
-.withColumnRenamed("sum(TotalIncludingTax)", "SumOfTotalIncludingTax")\
-.withColumnRenamed("sum(Profit)", "SumOfProfit")\
-.orderBy("date.Date", "city.StateProvince", "city.City")
-
-sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/aggregate_sale_by_date_city")
-     
-```
-
-### EDA
+## Cloning the repository
+You can follow the steps below to clone the repository.
 
 ```
-# Load data from source
-df = spark.read.load("Tables/csv_folder", header=True, inferSchema=True)
-
-df.count()
-
-from pyspark.sql.functions import col
-
-df.groupBy(col("vendorID")).count().show()
-
-
-# Retrieve information about the earliest and latest pickup dates in the dataset.
-
-from pyspark.sql.functions import min, max
-
-oldest_day = df.select(min("lpep_pickup_datetime")).collect()[0][0]
-latest_day = df.select(max("lpep_dropoff_datetime")).collect()[0][0]
-
-print("Oldest pickup date: ", oldest_day)
-print("Latest pickup date: ", latest_day)
-
-```
-Aggregation
-
-```
-from pyspark.sql.functions import col, year, month, dayofmonth, avg
-
-
-average_fare_per_month = (
-    df
-    .groupBy(year("lpep_pickup_datetime").alias("year"), month("lpep_pickup_datetime").alias("month"))
-    .agg(avg("fare_amount").alias("average_fare"))
-    .orderBy("year", "month")
-)
-display(average_fare_per_month)
-
-average_fare_per_month.write.format("delta").mode("overwrite").saveAsTable("average_fare_per_month")
+git clone -n https://github.com/tomaztk/Microsoft-Fabric.git
 ```
 
+## Contact
+Get in contact:
 
-
-## Data Science
-
-```
-import os
-import gzip
-
-import pyspark.sql.functions as F
-from pyspark.sql.window import Window
-from pyspark.sql.types import *
-
-import numpy as np
-import pandas as pd
-
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import matplotlib.style as style
-import seaborn as sns
-
-%matplotlib inline
-
-from synapse.ml.featurize import Featurize
-from synapse.ml.core.spark import FluentAPI
-from synapse.ml.lightgbm import *
-from synapse.ml.train import ComputeModelStatistics
-
-import mlflow
-
-
-transformer = Featurize().setOutputCol("features").setInputCols(FEATURE_COLUMNS).fit(raw_df)
-df = transformer.transform(raw_df)
-
-train_df.groupby(TREATMENT_COLUMN).count().show()
-
-
-treatment_train_df = train_df.where(f"{TREATMENT_COLUMN} > 0")
-control_train_df = train_df.where(f"{TREATMENT_COLUMN} = 0")
-
-
-classifier = (
-    LightGBMClassifier()
-    .setFeaturesCol("features")  # Set the column name for features
-    .setNumLeaves(10)  # Set the number of leaves in each decision tree
-    .setNumIterations(100)  # Set the number of boosting iterations
-    .setObjective("binary")  # Set the objective function for binary classification
-    .setLabelCol(LABEL_COLUMN)  # Set the column name for the label
-)
-
-# Start a new MLflow run with the name "uplift"
-active_run = mlflow.start_run(run_name="uplift")
-
-# Start a new nested MLflow run with the name "treatment"
-with mlflow.start_run(run_name="treatment", nested=True) as treatment_run:
-    treatment_run_id = treatment_run.info.run_id  # Get the ID of the treatment run
-    treatment_model = classifier.fit(treatment_train_df)  # Fit the classifier on the treatment training data
-
-# Start a new nested MLflow run with the name "control"
-with mlflow.start_run(run_name="control", nested=True) as control_run:
-    control_run_id = control_run.info.run_id  # Get the ID of the control run
-    control_model = classifier.fit(control_train_df)
-    
-loaded_treatmentmodel = mlflow.spark.load_model(treatment_model_uri, dfs_tmpdir="Files/spark")
-loaded_controlmodel = mlflow.spark.load_model(control_model_uri, dfs_tmpdir="Files/spark")
-
-# Make predictions
-batch_predictions_treatment = loaded_treatmentmodel.transform(test_df)
-batch_predictions_control = loaded_controlmodel.transform(test_df)
-batch_predictions_treatment.show(5)
+ [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&)](mailto:tomaztsql@gmail.com?subject=[GithubRepo]%20Fabric)
  
-```
+ [![Github URL](https://img.shields.io/twitter/url/https/twitter.com/tomaz_tsql.svg?style=social&label=Follow%20%40tomaz_tsql)](https://github.com/tomaztk)
 
-## Real time analytics
+<!--
+<a class="github-button" href="https://github.com/tomaztk" data-show-count="true" aria-label="Follow @tomaztk on GitHub">Follow @tomaztk</a>
+<script async defer src="https://buttons.github.io/buttons.js"></script>  -->
 
-## CI/CD + Development
+
+## Contributing
+Do the usual GitHub fork and pull request dance. Add yourself (or I will add you to the contributors section) if you want to. 
 
 
+## Suggestions
+Feel free to suggest any new topics that you would like to be covered.
 
-Under MIT license.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/) © Tomaž Kaštrun
