@@ -58,10 +58,6 @@ Get in contact:
  
  [![Github URL](https://img.shields.io/twitter/url/https/twitter.com/tomaz_tsql.svg?style=social&label=Follow%20%40tomaz_tsql)](https://github.com/tomaztk)
 
-<!--
-<a class="github-button" href="https://github.com/tomaztk" data-show-count="true" aria-label="Follow @tomaztk on GitHub">Follow @tomaztk</a>
-<script async defer src="https://buttons.github.io/buttons.js"></script>  -->
-
 
 ## Contributing
 Do the usual GitHub fork and pull request dance. Add yourself (or I will add you to the contributors section) if you want to. 
